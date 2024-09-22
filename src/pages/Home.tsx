@@ -1,10 +1,12 @@
-import { Sidebar } from "../components";
+import { Glassmorphism, MessageContainer, Sidebar } from "../components";
 
 const Home = () => {
+
     return (
-        <div className="flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+        <Glassmorphism className="h-[90%] w-[90%] shadow-2xl sm:w-[80%] overflow-hidden flex transition-all">
             <Sidebar />
-        </div>
+            <MessageContainer />
+        </Glassmorphism>
     );
 };
 

@@ -2,23 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Firefox scrollbar */
+* {
+  scrollbar-width: none;
+}
+
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg-laptop.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
 }
-
-
-/* Hide scrollbar */
-.scroll-bar-hidden::-webkit-scrollbar {
-  display: none;
-}
-.scroll-bar-hidden {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
 
 
 
