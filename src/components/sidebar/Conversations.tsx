@@ -1,4 +1,4 @@
-import Conversation from "./Conversation";
+import { Conversation } from "./";
 
 const Conversations = () => {
     return (

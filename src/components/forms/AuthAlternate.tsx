@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
+import { AuthAlternateProps } from "../../types/componentTypes";
 
-interface AuthAlternateProps {
-    text: string;
-    to: string;
-}
 
 const AuthAlternate: React.FC<AuthAlternateProps> = ({ text, to }) => {
     let linkText = to.replace("/", "");

@@ -1,11 +1,7 @@
-import { ReactNode } from "react";
+import { ComponentProps } from "../../types/componentTypes";
 
-interface GlassmorphismProps {
-    children: ReactNode;
-    className: string;
-}
 
-const Glassmorphism: React.FC<GlassmorphismProps> = ({ children, className }) => {
+const Glassmorphism: React.FC<ComponentProps> = ({ children, className }) => {
     return (
         <div className={`rounded-lg bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0  ${className} `}>
             {children}

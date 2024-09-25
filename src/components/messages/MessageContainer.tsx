@@ -1,7 +1,4 @@
-import MessageHeader from "./MessageHeader";
-import MessageInput from "./MessageInput";
-import Messages from "./Messages";
-import NoChatSelected from "./NoChatSelected"
+import { NoChatSelected, MessageHeader, Messages, MessageInput } from "./"
 
 const MessageContainer = () => {
     const selected = true;

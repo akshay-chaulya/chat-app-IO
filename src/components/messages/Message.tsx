@@ -3,7 +3,7 @@ const Message = () => {
         <div className="chat chat-end">
             <div className="chat-image avatar">
                 <div className="w-10 rounded-full">
-                    <img src="https://avatar.iran.liara.run/public/boy" alt="User avatar" />
+                    {/* <img src="https://avatar.iran.liara.run/public/boy" alt="User avatar" /> */}
                 </div>
             </div>
             <div className="chat-bubble text-white bg-blue-500">Hi! what is upp?</div>

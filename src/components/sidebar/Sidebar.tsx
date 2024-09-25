@@ -1,6 +1,4 @@
-import Conversations from "./Conversations";
-import LogoutBtn from "./LogoutBtn";
-import SearchInput from "./SearchInput";
+import { SearchInput, Conversations, LogoutBtn } from "./"
 
 const Sidebar = () => {
     return (

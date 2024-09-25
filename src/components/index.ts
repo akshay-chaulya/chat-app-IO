@@ -1,11 +1,9 @@
-import InputField from "./form/InputField"
-import AuthAlternate from "./form/AuthAlternate"
-import BtnPrimary from "./BtnPrimary"
-import Form from "./form/Form"
-import FormHeading from "./form/FormHeading"
-import GenderCheckbox from "./form/GenderCheckbox"
-import Sidebar from "./sidebar/Sidebar"
-import MessageContainer from "./messages/MessageContainer"
-import Glassmorphism from "./containers/Glassmorphism"
+import Button from "./Button"
+import { Glassmorphism, MainContainer } from "./containers"
+import { LoginForm, SignUpForm } from "./forms"
+import { Sidebar } from "./sidebar"
+import { MessageContainer } from "./messages"
+import LogoWithName from "./LogoWithName"
+import { PublicRoute, PrivateRoute } from "./routes"
 
-export { Glassmorphism, MessageContainer, Sidebar, GenderCheckbox, InputField, AuthAlternate, BtnPrimary, Form, FormHeading }
+export { PublicRoute, PrivateRoute, LogoWithName, Glassmorphism, MainContainer, MessageContainer, Sidebar, Button, LoginForm, SignUpForm }
