@@ -1,5 +1,7 @@
+
 export interface RootState {
     auth: AuthState;
+    chatApp: ChatAppState;
 }
 
 export interface AuthState {
@@ -28,4 +30,13 @@ export type SignUpDataType = {
 export interface ErrorDataType {
     message: string;
     success: boolean;
+}
+
+export interface ChatAppState {
+    users: UserDatayType[];
+    isLoading: boolean;
+    isSearching?: boolean;
+    error: string;
+    messages: Message[];
+    onlineUsers: string[];
 }

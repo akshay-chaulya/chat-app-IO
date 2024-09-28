@@ -1,15 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Home, Login, SignUp } from "./pages"
 import { Toaster } from "react-hot-toast"
-import { MainContainer, PrivateRoute, PublicRoute } from "./components"
 import { useCheckAuth } from "./features/auth/authHookes"
+import { MessageContainer, NoChatSelected, PrivateRoute, PublicRoute, Loader, MainContainer } from "./components"
+import useSocket from "./socket"
 
 function App() {
-  const { isLoading } = useCheckAuth();
+  const { isLoading } = useCheckAuth();   
+  useSocket();
+
 
   if (isLoading) return (
-    <MainContainer className="w-full h-full">
-      <h1>Loading...</h1>
+    <MainContainer>
+      <Loader />
     </MainContainer>
   );
 
@@ -18,13 +21,18 @@ function App() {
       <Toaster />
       <Routes>
         <Route element={<PrivateRoute />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} >
+            <Route index element={<NoChatSelected />} />
+
+            <Route path="/send/:id" element={<MessageContainer />} />
+            <Route path="/send-message/:id" element={<MessageContainer />} />
+          </Route>
         </Route>
         <Route element={<PublicRoute />}>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Route>
-        <Route path="*" element="<h1>Page not found</h1>" /> {/* Catch-all for 404 */}
+        <Route path="*" element={<h1>Page not found</h1>} /> {/* Catch-all for 404 */}
       </Routes>
     </BrowserRouter>
   )

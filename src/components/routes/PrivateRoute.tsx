@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectIsAuthenticated } from "../../features/auth/authSelector";
+import { selectIsAuthenticated } from "../../features/auth/authSelectors";
 
 const PrivateRoute = () => {
     const isAuthenticated = useSelector(selectIsAuthenticated);

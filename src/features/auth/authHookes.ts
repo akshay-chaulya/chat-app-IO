@@ -5,7 +5,6 @@ import { errorHandler } from "../../utils"
 import { LoginDataType, SignUpDataType } from "../../types/dataTypes"
 import { logout, setUser } from "./authSlice"
 import { useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 
 export const useCheckAuth = () => {
@@ -14,16 +13,16 @@ export const useCheckAuth = () => {
     const { data, isLoading, isSuccess, error } = useQuery({
         queryKey: ["authUser"],
         queryFn: async () => {
-            // await new Promise(r => setTimeout(r, 2000))
+            // await new Promise(r => setTimeout(r, 6000))
             const { data } = await authApi.get("/me");
-            console.log(data)
+
             return data;
         },
     })
 
     useEffect(() => {
-        if (isSuccess && data.success) {
-            dispatch(setUser(data.data.user))
+        if (isSuccess && data?.success) {
+            dispatch(setUser(data.data))
         }
     }, [data, error, isSuccess, dispatch])
 
@@ -41,7 +40,7 @@ export const useSignup = () => {
             errorHandler(error);
         },
         onSuccess: ({ message, data }) => {
-            dispatch(setUser(data.user))
+            dispatch(setUser(data))
             toast.success(message);
         }
     })
@@ -55,7 +54,7 @@ export const useLogin = () => {
             return data;
         },
         onSuccess({ message, data }) {
-            dispatch(setUser(data?.user))
+            dispatch(setUser(data))
             toast.success(message);
         },
         onError(error) {

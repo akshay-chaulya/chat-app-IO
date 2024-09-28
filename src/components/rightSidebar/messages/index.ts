@@ -1,4 +1,4 @@
-import NoChatSelected from "./NoChatSelected";
+import NoChatSelected from "../noChat/NoChatSelected";
 import MessageHeader from "./MessageHeader";
 import Messages from "./Messages";
 import Message from "./Message";
