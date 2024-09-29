@@ -51,6 +51,7 @@ export const useLogin = () => {
     return useMutation({
         mutationFn: async (credentials: LoginDataType) => {
             const { data } = await authApi.post("/login", { ...credentials },)
+            console.log(data)
             return data;
         },
         onSuccess({ message, data }) {
