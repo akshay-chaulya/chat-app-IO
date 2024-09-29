@@ -8,7 +8,7 @@ function useChatScroll(dep: Message[]) {
             if (ref.current) {
                 ref.current.scrollTop = ref.current.scrollHeight;
             }
-        }, 1000);
+        }, 500);
     }, [dep])
 
     return ref

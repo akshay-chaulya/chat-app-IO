@@ -67,9 +67,11 @@ export const useGetAllMessage = (friendId: string) => {
     const { data, isLoading, error, isSuccess } = useQuery({
         queryKey: ["messages", friendId],
         queryFn: async () => {
+            dispatch(setMessages([]));
             const { data } = await messageApi.get(`/${friendId}`);
             return data;
-        }
+        },
+        refetchOnWindowFocus: true,
     });
 
     useEffect(() => {
@@ -89,7 +91,6 @@ export const useSendMessage = () => {
             return data;
         },
         onSuccess: (data) => {
-            console.log(data)
             dispatch(addNewMessage(data.data));
         }
     });

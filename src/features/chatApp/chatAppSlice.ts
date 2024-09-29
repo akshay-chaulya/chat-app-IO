@@ -18,6 +18,7 @@ const chatAppSlice = createSlice({
         setUsers: (state, action: PayloadAction<UserDatayType[]>) => {
             state.users = action.payload;
             state.isLoading = false;
+            state.error = "";
         },
         setLoading: (state, action: PayloadAction<boolean>) => {
             state.isLoading = action.payload;
@@ -29,7 +30,6 @@ const chatAppSlice = createSlice({
             state.messages = action.payload
         },
         addNewMessage: (state, acition: PayloadAction<Message>) => {
-            console.log(acition.payload)
             state.messages.push(acition.payload);
         },
         setOnlieUsers: (state, acition: PayloadAction<string[]>) => {

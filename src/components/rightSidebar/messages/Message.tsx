@@ -13,7 +13,7 @@ const Message: FC<MessageProps> = ({ message }) => {
     return (
         <div className={`chat ${isMaine ? "chat-end" : "chat-start"}`}>
 
-            <div className={`chat-bubble text-white ${isMaine ? "bg-blue-500" : ""}`}>{message.text}</div>
+            <div className={`max-w-[70%] chat-bubble text-white break-words whitespace-pre-wrap ${isMaine ? "bg-blue-500" : ""}`}>{message.text}</div>
             <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">{getDate(message.createdAt)}</div>
         </div>
     );
