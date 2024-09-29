@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FormEventHandler, HTMLAttributes, InputHTMLAttributes, LegacyRef, ReactNode } from "react";
+import { ChangeEventHandler, FormEventHandler, HTMLAttributes, InputHTMLAttributes, ReactNode } from "react";
 
 export interface ComponentProps extends HTMLAttributes<HTMLDivElement> {
     children?: ReactNode;
